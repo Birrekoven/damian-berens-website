@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Damian Berens — German neoclassical composer. Music between silence and sound, shadow and light.">
+  <title>Damian Berens — Neoclassical Composer</title>
+  <style>
+    :root{
+      --paper:#f4f1ea;
+      --ink:#252525;
+      --muted:#69665f;
+      --line:#cfc9bd;
+      --soft:#ebe6dc;
+      --max:1180px;
+      --serif: Georgia, "Times New Roman", serif;
+      --mono: "Courier New", Courier, monospace;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--serif);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    img{display:block;max-width:100%}
+
+    .shell{
+      width:min(calc(100% - 40px), var(--max));
+      margin:0 auto;
+    }
+
+    .topbar{
+      padding:26px 0 10px;
+      font-family:var(--mono);
+      text-transform:uppercase;
+      letter-spacing:.20em;
+      font-size:.73rem;
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .nav{
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+    }
+    .nav a{
+      text-decoration:none;
+      padding-bottom:3px;
+      border-bottom:1px solid transparent;
+    }
+    .nav a:hover{border-color:var(--ink)}
+    .domain{color:var(--muted)}
+
+    .hero{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:54px;
+      align-items:center;
+      padding:42px 0 72px;
+    }
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin:0 0 26px;
+      font-family:var(--mono);
+      font-size:.82rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    .eyebrow::before{
+      content:"";
+      width:66px;
+      height:1px;
+      background:var(--ink);
+      display:block;
+    }
+    h1{
+      margin:0;
+      font-weight:400;
+      font-size:clamp(4rem, 8vw, 7.8rem);
+      line-height:.83;
+      letter-spacing:-.055em;
+    }
+    .tagline{
+      margin:36px 0 0;
+      font-family:var(--mono);
+      font-size:clamp(1rem,1.6vw,1.35rem);
+      letter-spacing:.05em;
+      line-height:1.55;
+      max-width:28ch;
+    }
+    .portrait-wrap{
+      position:relative;
+      overflow:hidden;
+      background:#ddd;
+    }
+    .portrait-wrap img{
+      width:100%;
+      aspect-ratio: 4 / 5;
+      object-fit:cover;
+      object-position:center;
+      filter:none;
+    }
+
+    .content-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:70px;
+      align-items:start;
+      padding:22px 0 86px;
+    }
+    .section-label{
+      margin:0 0 16px;
+      font-family:var(--mono);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.75rem;
+      color:var(--muted);
+    }
+    h2{
+      margin:0 0 28px;
+      font-weight:400;
+      font-size:clamp(2.4rem,4vw,4.25rem);
+      line-height:1.02;
+      letter-spacing:-.03em;
+    }
+    .bio{
+      font-size:1.16rem;
+      max-width:42rem;
+    }
+    .bio p{margin:0 0 1.25em}
+    .bio em{font-style:italic}
+
+    .feature{
+      border-top:1px solid var(--line);
+      padding-top:24px;
+    }
+    .cover{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      background:#ddd;
+    }
+    .listen,
+    .more{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      width:100%;
+      margin-top:14px;
+      padding:18px 20px;
+      text-decoration:none;
+      border:1px solid var(--ink);
+      font-family:var(--mono);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.83rem;
+      transition:.18s ease;
+    }
+    .listen{
+      background:var(--ink);
+      color:var(--paper);
+    }
+    .listen:hover{opacity:.86}
+    .more:hover{background:var(--soft)}
+    .arrow{font-size:1.3rem;letter-spacing:0}
+
+    .quote-band{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:74px 0 68px;
+      text-align:center;
+    }
+    blockquote{
+      margin:0 auto;
+      max-width:900px;
+      font-family:var(--mono);
+      font-size:clamp(1.05rem,2vw,1.45rem);
+      letter-spacing:.16em;
+      line-height:1.7;
+      text-transform:uppercase;
+    }
+    .for-damian{
+      margin-top:34px;
+      font-family:var(--mono);
+      text-transform:uppercase;
+      letter-spacing:.24em;
+      font-size:.78rem;
+      color:var(--muted);
+    }
+
+    footer{
+      padding:34px 0 50px;
+      font-family:var(--mono);
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+    .footer-links{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+    .footer-links a{text-decoration:none}
+    .footer-links a:hover{text-decoration:underline}
+
+    @media (max-width: 820px){
+      .topbar-inner{align-items:flex-start}
+      .domain{display:none}
+      .hero{
+        grid-template-columns:1fr;
+        gap:34px;
+        padding-top:30px;
+      }
+      .portrait-wrap{order:-1}
+      .portrait-wrap img{aspect-ratio:1/1.13}
+      .content-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+      }
+      h1{font-size:clamp(4rem,20vw,6.6rem)}
+    }
+
+    @media (max-width: 520px){
+      .shell{width:min(calc(100% - 28px), var(--max))}
+      .nav{gap:16px}
+      .topbar{font-size:.65rem}
+      .hero{padding-bottom:54px}
+      .eyebrow{font-size:.72rem}
+      .eyebrow::before{width:42px}
+      .bio{font-size:1.03rem}
+      .listen,.more{font-size:.72rem;padding:16px 15px}
+      .quote-band{padding:56px 0}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#music">Music</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="domain">damianberens.de</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell hero" aria-labelledby="page-title">
+      <div>
+        <h1 id="page-title">Damian<br>Berens</h1>
+        <p class="eyebrow">Neoclassical Composer</p>
+        <p class="tagline">Music between<br>silence and sound.</p>
+      </div>
+
+      <div class="portrait-wrap">
+        <img src="assets/damian-berens-portrait.png"
+             alt="Portrait of Damian Berens">
+      </div>
+    </section>
+
+    <section class="shell content-grid">
+      <article id="about">
+        <p class="section-label">About</p>
+        <h2>The Sound of Resilience</h2>
+
+        <div class="bio">
+          <p>Damian Berens is a German neoclassical composer and philosopher whose music moves between silence and sound, shadow and light.</p>
+
+          <p>After decades of combining his creative work with music pedagogy, he turned his attention fully to neoclassical piano composition in 2024.</p>
+
+          <p>His music is deeply connected to transformation, memory and place. A profound personal turning point in the landscapes of Haukeli, Norway, found its musical expression in <em>Transcendence</em> — a piece about leaving the weight of the past behind and moving towards a clearer horizon.</p>
+
+          <p>Travel continues to shape his work. His compositions often emerge in moments of stillness and transition. In 2025, experiences in New York, Stonehenge and Ireland during the Equinox became part of the inspiration for <em>Waves of the Wizard</em>.</p>
+
+          <p>For Berens, composition is less an act of construction than of listening — allowing music to arrive.</p>
+        </div>
+      </article>
+
+      <aside class="feature" id="music">
+        <p class="section-label">Featured work</p>
+        <img class="cover"
+             src="assets/transcendence-cover.jpg"
+             alt="Transcendence by Damian Berens — original cover artwork">
+
+        <a class="listen"
+           href="https://open.spotify.com/album/0jiqK7x0WMEZ2PJK39LqyL"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>Listen to Transcendence on Spotify</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="more"
+           href="https://open.spotify.com/artist/5CUyCJiRVPAzcI1OxKO5Hz"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>More music by Damian Berens</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </aside>
+    </section>
+
+    <section class="quote-band">
+      <div class="shell">
+        <blockquote>
+          “Somewhere between what was and what will be<br>
+          there is a place for music.”
+        </blockquote>
+        <div class="for-damian">For Damian</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>© 2026 Damian Berens</span>
+      <div class="footer-links">
+        <a href="impressum.html">Imprint</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
